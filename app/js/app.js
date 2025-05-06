@@ -1,5 +1,4 @@
 const shapeBox = document.querySelector(`div`);
-const boxStyles = window.getComputedStyle(shapeBox);
 
 let shapeDimension = 1;
 let shapeFullWidth = 0;
@@ -133,8 +132,7 @@ shapeBox.addEventListener(`click`, () => {
     if (!isAnimating) {
         shapeFullWidth =
             parseInt(shapeBox.style.width) +
-            2 * parseInt(boxStyles.padding) +
-            2 * parseInt(boxStyles.borderWidth);
+             8 + 10;
 
         requestAnimationFrame(moveShape);
         isAnimating = true;
