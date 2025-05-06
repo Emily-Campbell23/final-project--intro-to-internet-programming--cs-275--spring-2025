@@ -9,7 +9,7 @@ let shiftAmount = 5;
 
 window.onload = () => {
     let inputConfirmed = false;
-    shapeDimension = prompt(`Please input an integer above zero:`);
+    shapeDimension = prompt(`Please input an integer above zero for the size of your diamond:`);
 
     while (!inputConfirmed) {
         if (!isNaN(shapeDimension)) {
@@ -119,12 +119,14 @@ const buildEvenShape = (sizeInput) => {
 const moveShape = () => {
     const currentLeft = parseInt(shapeBox.style.left);
 
-    if (currentLeft === 0 || currentLeft >= window.innerWidth - shapeFullWidth) {
+    if (currentLeft <= 0 || currentLeft >= window.innerWidth - shapeFullWidth) {
         shiftAmount *= -1;
     }
 
     positionX += shiftAmount;
     shapeBox.style.left = `${positionX}px`;
+
+    requestAnimationFrame(moveShape);
 };
 
 shapeBox.addEventListener(`click`, () => {
@@ -134,7 +136,7 @@ shapeBox.addEventListener(`click`, () => {
             2 * parseInt(boxStyles.padding) +
             2 * parseInt(boxStyles.borderWidth);
 
-        setInterval(moveShape, 10);
+        requestAnimationFrame(moveShape);
         isAnimating = true;
     }
 });
