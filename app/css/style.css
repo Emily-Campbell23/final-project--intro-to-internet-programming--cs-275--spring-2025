@@ -1,10 +1,9 @@
 div {
   position: relative;
   font-family: monospace;
-  line-height: 8.8px;
   font-size: 16px;
   overflow-wrap: break-word;
   margin: 0;
-  border: black solid 2px;
-  padding: 6px;
+  border: black solid 5px;
+  padding: 4px;
 }

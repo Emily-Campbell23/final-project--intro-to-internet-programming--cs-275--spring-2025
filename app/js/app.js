@@ -5,11 +5,11 @@ let shapeDimension = 1;
 let shapeFullWidth = 0;
 let positionX = 0;
 let isAnimating = false;
-let shiftAmount = 5;
+let shiftAmount = 3;
 
 window.onload = () => {
     let inputConfirmed = false;
-    shapeDimension = prompt(`Please input an integer above zero for the size of your diamond:`);
+    shapeDimension = prompt(`Please input an integer above zero for the size of your diamond :`);
 
     while (!inputConfirmed) {
         if (!isNaN(shapeDimension)) {
@@ -113,7 +113,7 @@ const buildEvenShape = (sizeInput) => {
 
     shapeBox.innerHTML = renderedShape;
     shapeBox.style.width = `${shapeDimension * 8.8 * 2 + 8.8}px`;
-    shapeBox.style.lineHeight = `17.9px`;
+    shapeBox.style.lineHeight = `17.6px`;
 };
 
 const moveShape = () => {
